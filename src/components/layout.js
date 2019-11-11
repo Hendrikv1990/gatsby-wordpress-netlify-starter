@@ -37,7 +37,7 @@ const Layout = (props) => {
             color: '#666',
           }}
           >
-            With ❤ for Netlify
+           Freelance Web Developer / Entrepreneur
           </div>
         </>
       )
@@ -70,7 +70,7 @@ const Layout = (props) => {
           color: '#666',
         }}
         >
-          With ❤ for Netlify
+            This is my blog
         </div>
         </>
       )
@@ -84,29 +84,15 @@ const Layout = (props) => {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <iframe
-          title="Star on GitHub"
-          src="https://ghbtns.com/github-btn.html?user=justinwhall&repo=gatsby-wordpress-netlify-starter&type=star&count=true&size=large"
-          frameBorder="0"
-          scrolling="0"
-          width="158px"
-          height="30px"
-          style={{
-            position: 'absolute',
-            left: 10,
-            top: 10,
-          }}
-          ></iframe>
-          <a
-          href="https://justinwhall.com/headless-wordpress-gatsby-netlify-continous-deployment/"
-          style={{
-            position: 'absolute',
-            left: 150,
-            top: 10,
-          }}
-        >Get Started</a>
         <header>{header}</header>
         <main>{children}</main>
+          <form method="post" action="#" data-netlify="true" name="contact">
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="text" name="name" id="name" required />
+              <input type="text" name="email" id="email" required />
+              <textarea name="message" id="message" rows="4" required />
+              <input type="submit" value="Send Message" />
+          </form>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

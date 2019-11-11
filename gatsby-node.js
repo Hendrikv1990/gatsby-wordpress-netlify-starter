@@ -32,10 +32,12 @@ exports.onCreateNode = ({ node, actions }) => {
 
 
 const createPosts = require('./gatsby/createPosts');
+const createWorks = require('./gatsby/createWorks');
 const createPages = require('./gatsby/createPages');
 const createCategories = require('./gatsby/createCategories');
 
 exports.createPages = async ({ actions, graphql }) => {
+  await createWorks({ actions, graphql });
   await createPosts({ actions, graphql });
   await createPages({ actions, graphql });
   await createCategories({ actions, graphql });

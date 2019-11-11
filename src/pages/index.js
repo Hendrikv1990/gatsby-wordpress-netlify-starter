@@ -11,15 +11,18 @@ const BlogIndex = (props) => {
     title,
     postPrefix,
   } = props.data.site.siteMetadata;
-  const posts = props.data.allWordpressPost.edges;
+  const posts = props.data.allWordpressWpWork.edges;
 
   return (
     <Layout location={props.location} title={title}>
-      <SEO title="All posts" />
-      <Bio />
+      <SEO title="All works" />
       {posts.map(({ node }) => {
         return (
+
           <div key={node.slug}>
+              {node.featured_media &&
+              <img src={node.featured_media.source_url} alt={node.title} className="featured-image" />
+              }
             <h3
               style={{
                 marginBottom: rhythm(1 / 4),
@@ -52,7 +55,7 @@ export const pageQuery = graphql`
         postPrefix
       }
     }
-    allWordpressPost(
+    allWordpressWpWork(
        filter: {
          fields: {
            deploy: {eq: true}
@@ -65,14 +68,6 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           slug
           title
-          excerpt
-          id
-          featured_media {
-            source_url
-          }
-          categories {
-            name
-          }
         }
       }
     }
