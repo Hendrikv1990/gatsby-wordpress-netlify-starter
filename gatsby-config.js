@@ -8,6 +8,7 @@ module.exports = {
       twitter: `justinwhall`,
     },
     postPrefix : '/blog',
+    teamPrefix : '/team',
     pagePrefix: '',
   },
   plugins: [

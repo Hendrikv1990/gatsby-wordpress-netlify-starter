@@ -33,11 +33,13 @@ exports.onCreateNode = ({ node, actions }) => {
 
 const createPosts = require('./gatsby/createPosts');
 const createWorks = require('./gatsby/createWorks');
+const createTeams = require('./gatsby/createTeams');
 const createPages = require('./gatsby/createPages');
 const createCategories = require('./gatsby/createCategories');
 
 exports.createPages = async ({ actions, graphql }) => {
   await createWorks({ actions, graphql });
+  await createTeams({ actions, graphql });
   await createPosts({ actions, graphql });
   await createPages({ actions, graphql });
   await createCategories({ actions, graphql });
