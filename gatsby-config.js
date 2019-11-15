@@ -3,12 +3,13 @@ module.exports = {
     title: `hkvlaanderen`,
     author: `Justin W Hall`,
     description: `Web Developer & IT Consultant`,
-    siteUrl: `https://gatsby-wordpress-netlify-production.netlify.com`,
+    siteUrl: `https://elastic-sammet-90cff7.netlify.com`,
     social: {
       twitter: `justinwhall`,
     },
     postPrefix : '/blog',
     teamPrefix : '/team',
+    workPrefix : '/work',
     pagePrefix: '',
   },
   plugins: [
@@ -52,8 +53,22 @@ module.exports = {
         },
       }
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ["src/sass/"]
+      },
+    },
+    {resolve: `gatsby-plugin-sitemap`,
+    options: {
+      output: `/sitemap.xml`,
+      // Exclude specific pages or groups of pages using glob parameters
+      // See: https://github.com/isaacs/minimatch
+      // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+    }},
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

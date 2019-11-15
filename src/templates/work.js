@@ -64,6 +64,9 @@ export const pageQuery = graphql`
       modified
       id
       content
+      featured_media {
+        source_url
+      }
     }
   }
 `

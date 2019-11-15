@@ -11,6 +11,7 @@ const BlogIndex = (props) => {
     title,
     postPrefix,
     teamPrefix,
+    workPrefix
   } = props.data.site.siteMetadata;
 
   const posts = props.data.allWordpressWpWork.edges;
@@ -31,7 +32,7 @@ const BlogIndex = (props) => {
                 marginBottom: rhythm(1 / 4),
               }}
             >
-              <Link style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
+              <Link style={{ boxShadow: `none` }} to={`${workPrefix}/${node.slug}`}>
                 {node.title}
               </Link>
             </h3>
@@ -46,6 +47,8 @@ const BlogIndex = (props) => {
       })}
 
       {teams.map(({ node }) => {
+        console.log(node)
+
         return (
 
             <div key={node.slug}>
@@ -83,6 +86,7 @@ export const pageQuery = graphql`
         title
         postPrefix
         teamPrefix
+        workPrefix
       }
     }
     allWordpressWpWork(
@@ -98,6 +102,9 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           slug
           title
+          featured_media {
+            source_url
+          }
         }
       }
     }
@@ -114,6 +121,9 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           slug
           title
+          featured_media {
+            source_url
+          }
         }
       }
     }

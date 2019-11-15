@@ -12,9 +12,12 @@ const TeamTemplate = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
   let featuredImage = false;
 
+
+
   if (post.featured_media && post.featured_media.source_url ) {
     featuredImage = post.featured_media.source_url;
   }
+
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -23,9 +26,9 @@ const TeamTemplate = (props) => {
         description={post.excerpt}
       />
         <h1>{post.title} </h1>
-        {featuredImage &&
-              <img src={featuredImage} alt={post.title} className="featured-image" />
-        }
+      {featuredImage &&
+        <img src={featuredImage} alt={post.title} className="featured-image" />
+      }
         <div
           className="post-meta"
           style={{

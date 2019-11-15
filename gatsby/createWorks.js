@@ -14,7 +14,7 @@ module.exports = async ({ actions, graphql }) => {
     {
       site {
         siteMetadata {
-          postPrefix
+          workPrefix
         }
       }
       allWordpressWpWork {
@@ -26,6 +26,9 @@ module.exports = async ({ actions, graphql }) => {
             fields {
               deploy
             }
+            featured_media {
+               source_url
+            }
           }
         }
       }
@@ -36,13 +39,13 @@ module.exports = async ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const { postPrefix } = result.data.site.siteMetadata;
+    const { workPrefix } = result.data.site.siteMetadata;
     const { edges } = result.data.allWordpressWpWork;
 
     edges.forEach( edge => {
       if (edge.node.fields.deploy) {
         createPage({
-          path: `${postPrefix}/${edge.node.slug}`,
+          path: `${workPrefix}/${edge.node.slug}`,
           component: workTemplate,
           context: {
             id: edge.node.id,

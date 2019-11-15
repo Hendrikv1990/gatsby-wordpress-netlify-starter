@@ -13,9 +13,8 @@
     "url": "git@github.com:justinwhall/gatsby-wordpress-netlify-starter.git"
   },
   "scripts": {
-    "develop": "DEPLOY_ENV=lbn_published_production gatsby develop",
-    "build": "gatsby build",
     "develop": "gatsby develop",
+    "build": "gatsby build",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve"
@@ -28,7 +27,9 @@
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.1.3",
+    "gatsby-plugin-sass": "^2.1.22",
+    "gatsby-plugin-sharp": "^2.2.38",
+    "gatsby-plugin-sitemap": "^2.2.20",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-copy-linked-files": "^2.0.13",
     "gatsby-remark-images": "^3.0.14",
@@ -38,8 +39,9 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-source-wordpress": "^3.0.64",
     "gatsby-transformer-remark": "^2.3.12",
-    "gatsby-transformer-sharp": "^2.1.21",
+    "gatsby-transformer-sharp": "^2.3.4",
     "lodash": "^4.17.11",
+    "node-sass": "^4.13.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

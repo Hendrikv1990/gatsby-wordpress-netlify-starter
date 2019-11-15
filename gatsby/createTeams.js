@@ -26,6 +26,9 @@ module.exports = async ({ actions, graphql }) => {
             fields {
               deploy
             }
+            featured_media {
+              source_url
+            }
           }
         }
       }
